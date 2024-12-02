@@ -4,7 +4,7 @@ import requests
 from bs4 import BeautifulSoup
 from aocd import get_data
 
-day = 1
+day = 2
 year = 2024
 
 url = f"https://adventofcode.com/{year}/day/{day}"
@@ -33,5 +33,5 @@ else:
 
 data = get_data(session=cookies["session"] , day=day, year=year)
 
-with open(f"day_{day:02}/input_day_{day:02}.txt", "w") as f:
+with open(f"day_{day:02}/day_{day:02}_input.txt", "w") as f:
     f.write(data)
