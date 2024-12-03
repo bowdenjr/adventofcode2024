@@ -9,8 +9,7 @@
 <p>Only the four highlighted sections are real <code>mul</code> instructions. Adding up the result of each instruction produces <code><em>161</em></code> (<code>2*4 + 5*5 + 11*8 + 8*5</code>).</p>
 <p>Scan the corrupted memory for uncorrupted <code>mul</code> instructions. <em>What do you get if you add up all of the results of the multiplications?</em></p>
 </article>
-<p>Your puzzle answer was <code>167650499</code>.</p><p class="day-success">The first half of this puzzle is complete! It provides one gold star: *</p>
-<article class="day-desc"><h2 id="part2">--- Part Two ---</h2><p>As you scan through the corrupted memory, you notice that some of the conditional statements are also still intact. If you handle some of the uncorrupted conditional statements in the program, you might be able to get an even more accurate result.</p>
+<p>Your puzzle answer was <code>167650499</code>.</p><article class="day-desc"><h2 id="part2">--- Part Two ---</h2><p>As you scan through the corrupted memory, you notice that some of the conditional statements are also still intact. If you handle some of the uncorrupted conditional statements in the program, you might be able to get an even more accurate result.</p>
 <p>There are two new instructions you'll need to handle:</p>
 <ul>
 <li>The <code>do()</code> instruction <em>enables</em> future <code>mul</code> instructions.</li>
@@ -23,10 +22,11 @@
 <p>This time, the sum of the results is <code><em>48</em></code> (<code>2*4 + 8*5</code>).</p>
 <p>Handle the new instructions; <em>what do you get if you add up all of the results of just the enabled multiplications?</em></p>
 </article>
-<form action="3/answer" method="post"><input name="level" type="hidden" value="2"/><p>Answer: <input autocomplete="off" name="answer" type="text"/> <input type="submit" value="[Submit]"/></p></form>
-<p>Although it hasn't changed, you can still <a href="3/input" target="_blank">get your puzzle input</a>.</p>
+<p>Your puzzle answer was <code>95846796</code>.</p><p class="day-success">Both parts of this puzzle are complete! They provide two gold stars: **</p>
+<p>At this point, you should <a href="/2024">return to your Advent calendar</a> and try another puzzle.</p>
+<p>If you still want to see it, you can <a href="3/input" target="_blank">get your puzzle input</a>.</p>
 <p>You can also <span class="share">[Share<span class="share-content">on
-  <a href="https://bsky.app/intent/compose?text=I%27ve+completed+Part+One+of+%22Mull+It+Over%22+%2D+Day+3+%2D+Advent+of+Code+2024+%23AdventOfCode+https%3A%2F%2Fadventofcode%2Ecom%2F2024%2Fday%2F3" target="_blank">Bluesky</a>
-<a href="https://twitter.com/intent/tweet?text=I%27ve+completed+Part+One+of+%22Mull+It+Over%22+%2D+Day+3+%2D+Advent+of+Code+2024&amp;url=https%3A%2F%2Fadventofcode%2Ecom%2F2024%2Fday%2F3&amp;related=ericwastl&amp;hashtags=AdventOfCode" target="_blank">Twitter</a>
-<a href="javascript:void(0);" onclick="var ms; try{ms=localStorage.getItem('mastodon.server')}finally{} if(typeof ms!=='string')ms=''; ms=prompt('Mastodon Server?',ms); if(typeof ms==='string' &amp;&amp; ms.length){this.href='https://'+ms+'/share?text=I%27ve+completed+Part+One+of+%22Mull+It+Over%22+%2D+Day+3+%2D+Advent+of+Code+2024+%23AdventOfCode+https%3A%2F%2Fadventofcode%2Ecom%2F2024%2Fday%2F3';try{localStorage.setItem('mastodon.server',ms);}finally{}}else{return false;}" target="_blank">Mastodon</a></span>]</span> this puzzle.</p>
+  <a href="https://bsky.app/intent/compose?text=I%27ve+completed+%22Mull+It+Over%22+%2D+Day+3+%2D+Advent+of+Code+2024+%23AdventOfCode+https%3A%2F%2Fadventofcode%2Ecom%2F2024%2Fday%2F3" target="_blank">Bluesky</a>
+<a href="https://twitter.com/intent/tweet?text=I%27ve+completed+%22Mull+It+Over%22+%2D+Day+3+%2D+Advent+of+Code+2024&amp;url=https%3A%2F%2Fadventofcode%2Ecom%2F2024%2Fday%2F3&amp;related=ericwastl&amp;hashtags=AdventOfCode" target="_blank">Twitter</a>
+<a href="javascript:void(0);" onclick="var ms; try{ms=localStorage.getItem('mastodon.server')}finally{} if(typeof ms!=='string')ms=''; ms=prompt('Mastodon Server?',ms); if(typeof ms==='string' &amp;&amp; ms.length){this.href='https://'+ms+'/share?text=I%27ve+completed+%22Mull+It+Over%22+%2D+Day+3+%2D+Advent+of+Code+2024+%23AdventOfCode+https%3A%2F%2Fadventofcode%2Ecom%2F2024%2Fday%2F3';try{localStorage.setItem('mastodon.server',ms);}finally{}}else{return false;}" target="_blank">Mastodon</a></span>]</span> this puzzle.</p>
 </main>
