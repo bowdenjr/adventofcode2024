@@ -6,7 +6,7 @@ import re
 def part1(disk):
 
     # Extrapolate
-    compression = ""
+    compression = []
     id = 0
     i = 0
     j = 0
@@ -15,19 +15,19 @@ def part1(disk):
         
         size = int(disk[i])
         if i % 2 == 0: # file
-            file = "".join([str(x) for x in list(repeat(id, size))])
-            compression += file
+            # file = "".join([str(x) for x in list(repeat(id, size))])
+            compression.append({"id": i, "size": size})
             id += 1
-            j += len(file)
+            # j += len(file)
         else: # free space
             space = "".join(list(repeat(".",size)))
-            compression += space
-            j += len(space)
+            compression.append({"space": size})
+            # j += len(space)
         i += 1
 
     # Compress
     i = len(compression)
-    compression_list = list(compression)
+    compression_list = compression
     dot_positions = [i for i, x in enumerate(compression_list) if x == "."]
     digits = list(reversed([x for x in compression_list if x.isdigit()]))
     
@@ -46,11 +46,15 @@ def part1(disk):
 
 if __name__ == "__main__":
 
-    disk = open_advent_calendar("day_09\day_09_input.txt")
-    # disk = open_advent_calendar("day_09\sample_input_day_09.txt")
+    # disk = open_advent_calendar("day_09\day_09_input.txt")
+    # disk = ["5553244557716930487729269980742158786547371147"]
+    disk = open_advent_calendar("day_09\sample_input_day_09.txt")
     print(f"Answer = {part1(*disk)}") # 90994085674 too low
 
 """
+00...111...2...333.44.5555.6666.777.888899
+
 0099811188827773336446555566
+
 0099811188827773336446555566..............
 """
