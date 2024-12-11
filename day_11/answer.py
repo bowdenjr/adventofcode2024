@@ -1,55 +1,49 @@
 from scripts.utilities import open_advent_calendar
-import math
+from collections import defaultdict
 
 
-def compute_new_stones(stone):
+def blink(stones):
     
-    if stone == 0:
-        return 1
-    elif int(math.log10(stone)+1) % 2 == 0:
-        dec = 10**int((math.log10(stone)+1)//2)
-        dec_split = stone / dec
-        left = compute_new_stones(int(dec_split))
-        right = compute_new_stones(int(round(dec * (dec_split - int(dec_split)), int((math.log10(stone) + 1) // 2))))
-        return [left, right]
-    else:
-        return stone * 2024
+    new_stones = defaultdict(int)
     
+    for stone in stones:
+        if stone == 0:
+            new_stones[1] += stones[stone]
+        elif len(str(stone)) % 2 == 0:
+            str_length = len(str(stone)) // 2
+            left = int(str(stone)[:str_length])
+            right = int(str(stone)[str_length:])
+            new_stones[left] += stones[stone]
+            new_stones[right] += stones[stone] 
+        else:
+            new_stones[stone * 2024] += stones[stone]
+ 
+    return new_stones
 
-def part1(stones):
 
-    blinks = 25
+def part1and2(input_stones):
     
-    stones = [int(stone) for stone in stones]
-
-    for blink in range(blinks):        
-        
-        new_stones = []
-        print(f"At blink: {blink}")
-
-        for stone in stones:
-            
-            new_stones.append(compute_new_stones(stone))
-
-            # if stone == 0:
-            #     new_stones.append(1)
-            # elif int(math.log10(stone)+1) % 2 == 0:
-            #     dec = 10**int((math.log10(stone)+1)//2)
-            #     dec_split = stone / dec
-            #     new_stones.extend([int(dec_split), int(round(dec*(dec_split - int(dec_split)),int((math.log10(stone)+1)//2)))])
-            # else:
-            #     new_stones.append(stone * 2024)
-                
+    i = 0
+    MAX_ITER = 75
+    stones = defaultdict(int)
+    
+    input_stones = [int(stone) for stone in input_stones]
+    
+    for stone in input_stones:
+        stones[stone] += 1
+    
+    while i < MAX_ITER:
+        i += 1
+        new_stones = blink(stones)
         stones = new_stones
-
-    return len(stones)
-            
+        
+    return sum(stones.values())
+    
             
 if __name__ == "__main__":
 
-    stones  = "125 17".split()
-    # stones = open_advent_calendar("day_11\day_11_input.txt")[0].split()
+    # input_stones = "125 17".split()
+    input_stones = open_advent_calendar("day_11\day_11_input.txt")[0].split()
 
     # print(map)
-    print(f"\nAnswer = {part1(stones)}")
-    # compute_new_stones()
+    print(f"\nAnswer = {part1and2(input_stones)}")
